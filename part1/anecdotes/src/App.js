@@ -16,8 +16,6 @@ const App = () => {
   const [points, setPoints] = useState(Array(anecdotes.length).fill(0))
 
 
-  // const randomNumber=()=>{ Math.floor(Math.random()*8)
-  // }
 
   const randomNumber = () => {
     return Math.floor(Math.random() * anecdotes.length)
