@@ -1,0 +1,51 @@
+/* .count{
+  margin: 3rem ;
+  padding-top: 3rem;
+}
+
+.message{
+  display: flex;
+  justify-content: center;
+} */
+
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+input{
+  border: 2px solid lightblue;
+  height: 2rem ;
+  width: 14rem;
+  
+}
+
+input[type=text] {
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 40%;
+  border: 3px solid rgb(27, 124, 204);
+}
+/* 
+.App{
+  display: flex;
+  flex-direction: column;
+} */
+
+h1, h2{
+  padding: 2rem 0;
+}
+
+.name{
+  padding: 1rem;
+}
+
+.lang{
+  padding: 1.5rem;
+}
+
+img{
+  border: 2px solid black;
+}
