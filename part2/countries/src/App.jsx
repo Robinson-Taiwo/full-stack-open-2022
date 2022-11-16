@@ -15,9 +15,12 @@ const App = () => {
       .get('https://restcountries.com/v3.1/all')
       .then(response => {
         setCountries(response.data)
-        console.log('response', response)
+        // console.log('response', response)
       })
   }, [])
+
+
+
 
   const filtered = countries.filter(
     country => country.name.common.toLowerCase().includes(query.toLowerCase())
@@ -29,14 +32,19 @@ const App = () => {
     setShowCountry({})
   }
 
-  const handleShow = name => () => setShowCountry(
-    filtered.filter(country => country.name.common.includes(name))[0]
-  )
+  const handleShow = (name) => (e) => {
 
-  console.log("showcountry", showCountry)
-  console.log("name ", showCountry.name)
-  console.log("handleshow", handleShow)
-  console.log("foltered", filtered[0])
+    const _countryToShow = filtered.filter(country => country.name.common === name)
+    console.log({ _countryToShow });
+    setShowCountry(
+      _countryToShow[0]
+    )
+  }
+
+  // console.log("showcountry", showCountry)
+  // console.log("name ", showCountry.name)
+  // console.log("handleshow", handleShow)
+  // console.log("filtered", filtered[0])
 
   return (
     <div className='App'>
@@ -58,8 +66,9 @@ const App = () => {
 
       )}
 
-      {showCountry.name && <CountryDetails filtered={filtered} />
+      {showCountry.name && <CountryDetails filtered={[showCountry]} />
       }
+
 
 
     </div>
