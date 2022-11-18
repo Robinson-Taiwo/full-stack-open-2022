@@ -1,0 +1,11 @@
+.notify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 50%;
+    background-color: rgb(202, 195, 195);
+    border: 5px solid green;
+    border-radius: 4px;
+    margin: 1rem;
+}
