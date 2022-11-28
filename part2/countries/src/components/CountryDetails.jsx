@@ -2,16 +2,18 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 import "./CountryDetails.css"
+
+
 const CountryDetails = ({ filtered }) => {
 
     const [weather, setWeather] = useState(null)
 
-
+    const api_key = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
 
         axios
-            .get(`http://api.weatherstack.com/current?access_key=1861d46b023cf236c014a965c9d4be70&query=${filtered[0].name.common}`)
+            .get(`http://api.weatherstack.com/current?access_key=${api_key}&query=${filtered[0].name.common}`)
             .then(res => setWeather(res.data))
 
     }, [])
